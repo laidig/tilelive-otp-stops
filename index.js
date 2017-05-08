@@ -91,7 +91,7 @@ const stopMapper = data => ({
     properties: {
       gtfsId: stop.gtfsId,
       name: stop.name,
-      code: stop.code,
+      code: stop.code == null ? null : stop.code,
       platform: stop.platformCode,
       parentStation: stop.parentStation == null ? null : stop.parentStation.gtfsId,
       type: stop.patterns == null ? null : stop.patterns.map(pattern => pattern.route.mode).uniq().join(","),
